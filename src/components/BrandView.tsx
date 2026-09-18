@@ -98,9 +98,7 @@ export const BrandView: React.FC<BrandViewProps> = ({ brand, isLocalhost }) => {
             />
           </span>
           <span className="uppercase font-semibold tracking-wider text-[11px]">
-            <span>COMING SOON</span>
-            <span className="text-zinc-600">|</span>
-            <span>{brand.badge.label}</span>
+            {brand.badge.status}
           </span>
         </div>
       </header>
@@ -125,13 +123,19 @@ export const BrandView: React.FC<BrandViewProps> = ({ brand, isLocalhost }) => {
         </h1>
 
         {/* Supporting Copy */}
-        <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl font-normal leading-relaxed mb-4">
+        <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl font-normal leading-relaxed mb-3">
           {brand.hero.supportingText}
         </p>
 
-        <p className="text-sm sm:text-base text-zinc-500 max-w-xl mb-10 leading-normal">
+        <p className="text-sm sm:text-base text-zinc-400 max-w-xl mb-6 leading-normal">
           {brand.hero.secondaryText}
         </p>
+
+        {/* COMING SOON Intentional Marker */}
+        <div className="mb-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-700/60 text-xs font-semibold tracking-widest text-zinc-200 uppercase shadow-inner">
+          <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: brand.theme.statusDot }}></span>
+          <span>COMING SOON</span>
+        </div>
 
         {/* Early Access / Contact Form Box */}
         <div className="w-full max-w-md bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/80 p-2 sm:p-2.5 rounded-2xl shadow-2xl mb-14">
