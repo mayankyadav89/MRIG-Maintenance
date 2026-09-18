@@ -98,7 +98,9 @@ export const BrandView: React.FC<BrandViewProps> = ({ brand, isLocalhost }) => {
             />
           </span>
           <span className="uppercase font-semibold tracking-wider text-[11px]">
-            {brand.badge.label}
+            <span>COMING SOON</span>
+            <span className="text-zinc-600">|</span>
+            <span>{brand.badge.label}</span>
           </span>
         </div>
       </header>
